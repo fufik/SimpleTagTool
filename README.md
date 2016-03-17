@@ -1,7 +1,6 @@
 Deps: taglib
-+ Make a folder named "SimpleTagTool"
-+ Go to new folder and do 
++ Do in terminal
 ```
 git clone https://github.com/fufik/SimpleTagTool
 ```
-+ Open .pro file with QtCreator
++ Open .pro file in folder with QtCreator
