@@ -23,7 +23,7 @@ void MainWindow::on_openfilebut_clicked()
 {
     switch (ui->typech->currentIndex())
     {
-        case 1:
+        case 0:
         filename = QFileDialog::getOpenFileName(this, tr("Открыть MP3 файл"),"/home",tr("MP3 файлы (*.mp3)"));
         ui->openfiledir->setText(filename);
         pTrack = new TagLib::MPEG::File(TS(filename));
@@ -54,20 +54,4 @@ void MainWindow::on_typech_currentIndexChanged(int index)
 {
     ui->openfiledir->clear();
     ui->filealbum->clear();
-    if (index==0)
-    {
-        ui->openfilebut->setEnabled(0);
-        ui->openfiledir->setEnabled(0);
-        ui->filealbum->setEnabled(0);
-        ui->savebut->setEnabled(0);
-        ui->label->setEnabled(0);
-    }
-    else
-    {
-        ui->openfilebut->setEnabled(1);
-        ui->openfiledir->setEnabled(1);
-        ui->filealbum->setEnabled(1);
-        ui->savebut->setEnabled(1);
-        ui->label->setEnabled(1);
-    }
 }
