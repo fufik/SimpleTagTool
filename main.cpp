@@ -1,10 +1,8 @@
 //GPL
 #include "mainwindow.h"
 #include <QApplication>
-#include <QTextCodec>
-#include <QTranslator>
-#include <QLocale>
-#include <QLibraryInfo>
+#include <QtCore>
+#include <iostream>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -16,7 +14,8 @@ int main(int argc, char *argv[])
     qtTranslator.load("qt_" + QLocale::system().name(),QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     a.installTranslator(&qtTranslator);
     QTranslator myTranslator;
-    myTranslator.load("stt_"+QLocale::system().name());
+    if (!myTranslator.load("stt_"+QLocale::system().name()))
+        std::cout<<"Can't get appropriate program localization file.\n";
     a.installTranslator(&myTranslator);
     MainWindow w;
     w.show();
