@@ -94,14 +94,14 @@
      <item row="3" column="0">
       <widget class="QComboBox" name="typech">
        <property name="currentText">
-        <string notr="true">MP3</string>
+        <string>MP3</string>
        </property>
        <property name="currentIndex">
         <number>0</number>
        </property>
        <item>
         <property name="text">
-         <string>MP3</string>
+         <string notr="true">MP3</string>
         </property>
        </item>
       </widget>
