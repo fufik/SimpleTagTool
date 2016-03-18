@@ -36,9 +36,15 @@ void MainWindow::on_openfilebut_clicked()
 void MainWindow::on_openfiledir_textChanged(const QString &arg1)
 {
     if (ui->openfiledir->text()!="")
+    {
         ui->filealbum->setEnabled(1);
+        ui->savebut->setEnabled(1);
+     }
     else
+    {
         ui->filealbum->setEnabled(0);
+        ui->savebut->setEnabled(0);
+    }
 }
 
 void MainWindow::on_savebut_clicked()
