@@ -93,8 +93,14 @@
      </item>
      <item row="3" column="0">
       <widget class="QComboBox" name="typech">
+       <property name="accessibleName">
+        <string notr="true"/>
+       </property>
+       <property name="accessibleDescription">
+        <string notr="true"/>
+       </property>
        <property name="currentText">
-        <string>MP3</string>
+        <string notr="true">MP3</string>
        </property>
        <property name="currentIndex">
         <number>0</number>
