@@ -20,6 +20,6 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 INCLUDEPATH += /usr/include
-#LIBS += -ltaglib
 CONFIG += link_pkgconfig
 PKGCONFIG += taglib
+TRANSLATIONS += stt_ru.ts
