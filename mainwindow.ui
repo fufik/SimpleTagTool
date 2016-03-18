@@ -60,7 +60,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Открыть файл</string>
+        <string>Open File</string>
        </property>
       </widget>
      </item>
@@ -70,7 +70,7 @@
      <item row="2" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Название альбома</string>
+        <string>Album name</string>
        </property>
       </widget>
      </item>
@@ -84,7 +84,7 @@
      <item row="3" column="1">
       <widget class="QPushButton" name="savebut">
        <property name="text">
-        <string>Сохранить название</string>
+        <string>Save</string>
        </property>
       </widget>
      </item>

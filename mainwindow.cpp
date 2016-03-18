@@ -24,7 +24,7 @@ void MainWindow::on_openfilebut_clicked()
     switch (ui->typech->currentIndex())
     {
         case 0:
-        filename = QFileDialog::getOpenFileName(this, tr("Открыть MP3 файл"),"/home",tr("MP3 файлы (*.mp3)"));
+        filename = QFileDialog::getOpenFileName(this, tr("Open MP3 file"),"/home",tr("MP3 files (*.mp3)"));
         ui->openfiledir->setText(filename);
         pTrack = new TagLib::MPEG::File(TS(filename));
         //TagLib::MPEG::File tgf(TS(filename));
