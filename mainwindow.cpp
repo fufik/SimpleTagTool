@@ -27,15 +27,15 @@ void MainWindow::on_openfilebut_clicked()
         filename = QFileDialog::getOpenFileName(this, tr("Open MP3 file"),"/home",tr("MP3 files (*.mp3)"));
         ui->openfiledir->setText(filename);
         pTrack = new TagLib::MPEG::File(TS(filename));
-        //TagLib::MPEG::File tgf(TS(filename));
         ui->filealbum->setText(QS(pTrack->tag()->album()));
         break;
+        //TODO:More formats
     }
 }
 
 void MainWindow::on_openfiledir_textChanged(const QString &arg1)
 {
-    if (ui->openfiledir->text()!="")
+    if (QFile::exists(arg1)) //Checking file for existing
     {
         ui->filealbum->setEnabled(1);
         ui->savebut->setEnabled(1);
