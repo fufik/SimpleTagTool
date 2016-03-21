@@ -56,11 +56,11 @@ void MainWindow::on_savebut_clicked()
     pTrack->tag()->setArtist(TS(ui->fileauthor->text()));
     pTrack->tag()->setAlbum(TS(ui->filealbum->text()));
     pTrack->save();
-    delete pTrack;
-    delete pFile;
     ui->openfiledir->clear();
     ui->fileauthor->clear();
     ui->filealbum->clear();
+    delete pTrack;
+    delete pFile;
 }
 
 void MainWindow::on_typech_currentIndexChanged(int index)
