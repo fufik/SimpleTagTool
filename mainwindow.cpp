@@ -26,6 +26,7 @@ void MainWindow::on_openfilebut_clicked()
         case 0:
         //filename = QFileDialog::getOpenFileName(this, tr("Open MP3 file"),"/home",tr("MP3 files (*.mp3)"));
         pFile = new QFileInfo(QFileDialog::getOpenFileName(this, tr("Open MP3 file"),"/home",tr("MP3 files (*.mp3)")));
+        ui->openfiledir->setEnabled(1);
         ui->openfiledir->setText(pFile->absoluteFilePath());
         pTrack = new TagLib::MPEG::File(TS(pFile->absoluteFilePath()));
         ui->fileauthor->setText(QS(pTrack->tag()->artist()));
@@ -39,15 +40,11 @@ void MainWindow::on_openfiledir_textChanged(const QString &arg1)
 {
     if (pFile->isFile()) //Checking file for existing
     {
-        ui->fileauthor->setEnabled(1);
-        ui->filealbum->setEnabled(1);
-        ui->savebut->setEnabled(1);
+    enableFields();
      }
     else
     {
-        ui->fileauthor->setEnabled(0);
-        ui->filealbum->setEnabled(0);
-        ui->savebut->setEnabled(0);
+    disableFields();
     }
 }
 
@@ -56,16 +53,39 @@ void MainWindow::on_savebut_clicked()
     pTrack->tag()->setArtist(TS(ui->fileauthor->text()));
     pTrack->tag()->setAlbum(TS(ui->filealbum->text()));
     pTrack->save();
-    ui->openfiledir->clear();
-    ui->fileauthor->clear();
-    ui->filealbum->clear();
+    clearFields();
+    disableFields(1);
     delete pTrack;
     delete pFile;
 }
 
 void MainWindow::on_typech_currentIndexChanged(int index)
 {
+    clearFields();
+    disableFields(1);
+}
+
+void MainWindow::clearFields()
+{
     ui->openfiledir->clear();
     ui->fileauthor->clear();
     ui->filealbum->clear();
+}
+
+void MainWindow::enableFields(bool opfd) //Argument for disabling openfiledir
+{
+    if (opfd)
+        ui->openfiledir->setEnabled(1);
+    ui->fileauthor->setEnabled(1);
+    ui->filealbum->setEnabled(1);
+    ui->savebut->setEnabled(1);
+}
+
+void MainWindow::disableFields(bool opfd) //Same here
+{
+    if (opfd)
+        ui->openfiledir->setEnabled(0);
+    ui->fileauthor->setEnabled(0);
+    ui->filealbum->setEnabled(0);
+    ui->savebut->setEnabled(0);
 }

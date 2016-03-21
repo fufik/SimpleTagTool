@@ -26,6 +26,9 @@ private slots:
     void on_savebut_clicked();
 
     void on_typech_currentIndexChanged(int index);
+    void clearFields();
+    void enableFields(bool opfd=0);
+    void disableFields(bool opfd=0);
 
 private:
     //QString filename;
