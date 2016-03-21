@@ -19,6 +19,16 @@
         <translation type="unfinished">Сохранить</translation>
     </message>
     <message>
+        <location filename="mainwindow.ui" line="98"/>
+        <source>MP3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="106"/>
+        <source>Author</source>
+        <translation type="unfinished">Исполнитель</translation>
+    </message>
+    <message>
         <location filename="mainwindow.cpp" line="27"/>
         <source>Open MP3 file</source>
         <translation type="unfinished">Открыть MP3 файл</translation>

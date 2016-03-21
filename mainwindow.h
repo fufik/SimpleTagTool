@@ -1,5 +1,6 @@
 //GPL
 #include <taglib/mpegfile.h>
+#include <QFileDialog>
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -27,9 +28,10 @@ private slots:
     void on_typech_currentIndexChanged(int index);
 
 private:
-    QString filename;
+    //QString filename;
     Ui::MainWindow *ui;
     TagLib::MPEG::File* pTrack;
+    QFileInfo* pFile;
 };
 
 #endif // MAINWINDOW_H
