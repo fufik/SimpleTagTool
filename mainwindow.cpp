@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //filename="";
 
 }
 
@@ -24,7 +23,6 @@ void MainWindow::on_openfilebut_clicked()
     switch (ui->typech->currentIndex())
     {
         case 0:
-        //filename = QFileDialog::getOpenFileName(this, tr("Open MP3 file"),"/home",tr("MP3 files (*.mp3)"));
         pFile = new QFileInfo(QFileDialog::getOpenFileName(this, tr("Open MP3 file"),"/home",tr("MP3 files (*.mp3)")));
         ui->openfiledir->setEnabled(1);
         ui->openfiledir->setText(pFile->absoluteFilePath());
