@@ -36,7 +36,7 @@ void MainWindow::on_openfilebut_clicked()
 
 void MainWindow::on_openfiledir_textChanged(const QString &arg1)
 {
-    if (pFile->isFile()) //Checking file for existing
+    if (pFile->isFile()) //Checking: is file exists
     {
     enableFields();
      }
